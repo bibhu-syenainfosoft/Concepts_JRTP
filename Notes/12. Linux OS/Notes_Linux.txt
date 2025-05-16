@@ -7,9 +7,9 @@ chmod 400 "myapp.pem"
 Note: 
 1. Linux commands are case sensitivity.
 2. Using public IP Linux multiple users can connect to linux machine as it is multi user based OS.
-3. The default user name os ec2-user
+3. The default user name is ec2-user
 4. For default user ec2-user there is no password thats why we are connecting this using pem file.
-5. In realtime all the admin related tasks is done by devops team calles as linux administrators.
+5. In realtime all the admin related tasks is done by devops team called as linux administrators.
 6. When we will delete a user then the user only will be deleted but not the directory.
 7. rm *.txt it means it can delete all the txt files.
 8. mobaxterm is both GUI and CLI based.
@@ -87,7 +87,8 @@ File Permissions
 2.
 [ec2-user@ip-172-31-21-29 ~]$ ls -l
 total 4
--rw-r--r--. 1 ec2-user ec2-user 182 May 10 08:14 b.txt               // Here - defines the text file/empty directory
+-rw-r--r--. 1 ec2-user ec2-user 182 May 10 08:14 b.txt               // Here - defines the text file/empty                                         
+                                                                                                     directory
 -rw-r--r--. 1 ec2-user ec2-user   0 May  9 16:55 c.txt                     
 drwxr-xr-x. 2 ec2-user ec2-user  20 May 10 03:38 devops              // Here d defines the empty directory
 
