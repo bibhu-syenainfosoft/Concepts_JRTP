@@ -1,0 +1,178 @@
+1. There are 2 SDLC methodologies are there. Waterfall Model(outdated model) and Agile Model(mostly used model).
+
+2. In case of Waterfall model the requirement is fixed, budget is fixed, all the SDLC phases happens one by one but not at a time. 
+In this case client involvement is not there, the client will review the project at the end which is not a good process. 
+Addition of new functionality is not possible in this case.
+The problems are is the client will review the project at the last if he does not like the development process and requirements, then all of the work and money will go waste, so client involvement in each and every phases as well as client satisfaction is most important in projects.
+In the case once the development starts there is no chance to change the requirements.
+Testing will happen in the end.
+
+
+3. In case of Agile model the requirement is not fixed, budget is not fixed, all the SDLC phases happens at parallelly. 
+In this case client involvement is there in each and every phases, the client will review the project in each and every phases i.e. called as Sprint. 
+Addition of new functionality and new enhancements should be done at the time of development.
+If the client will review in each and every phases then later he cannot say I am not satisfied the project development and functionality.
+Agile breaks the project development lifecycle into sprints.
+
+4. "Sprint" means it is a fixed time period in which some specific tasks should be developed and made ready to be review. It is a key component of frameworks like Scrum. It means also it divides the software development into small small parts.
+
+5. The client will give the design document as FDD(Functional Design Document)/BRD(Business Requirement Document)/SRS(Software Requirement Specification) document.
+
+6. Everyday we need to communicate with scrum master regarding the work status. In Scrum Meeting we need to discuss what we have done today/yesterday, work status and problems in developing. Planned leave and unplanned leave we need to inform to Scrum master.
+
+7. Product owner and Scrum master mostly from non-technical background, even though they don't know Java/.Net. They are managing people.
+
+8. In Scrum meeting Scrum master will note down our work statuses. If we are absent in scrum meetings then we need to email to Scrum master about our work status.
+
+9. sbidevops@tcs.com, we can call this mail id as email group/DL(Distribution List) i.e. when we will send the email to this mail id then all the registered mail id will get the message so that we don't need to send the mail to each one separately.
+
+10. Every story is considered as one task. If we did not complete the story/task with in the specific period of time then we need to describe with our Scrum Master.
+
+11. If any story is taking more than 3 days then we have to split and break down into 2 stories.
+
+12. Ideaz Board means as a developer giving come helpful ideas.
+
+
+
+
+
+=======================================================================================================================================================================
+
+
+
+
+=========================================
+Software Development Life Cycle (SDLC)
+=========================================
+=> From stat to end is called as Life Cycle
+=> SDLC = Development + Testing + Deployment + Delivery 
+=> From project start to till project end is called as Software development lifeycle.
+=> We have several phases in SDLC
+
+1) Requirements Gathering
+2) Requirements Analysis
+3) Design (FDD / BRD / SRS )
+4) Development
+5) Testing
+6) Deployment
+7) Delivery
+8) Support (SLA - Service Line Agreement ) - 6 months
+
+====================
+SDLC Methodologies
+====================
+1) Waterfall (outdated)
+2) Agile (Most Trending)
+
+=======================
+Waterfall methodology
+=======================
+-> Linear methodology (Sequential Process)
+-> It is a step by step process
+-> After one step is completed then only we will move to next step
+-> Forward Direction
+-> Client involement is very less
+-> Client will see project at the end 
+-> Requirements fixed & budget fixed
+
+==================
+Agile Methodolgy
+==================
+-> Iterative approach
+-> Development + Testing + Delivery - is a cyclic process
+-> Project will be delivered in multiple phases (Sprint)
+-> Client Involment will be there in every phase of the project
+-> Requirements are not fixed & Budget is not fixed
+Note: Client Satisfaction is most important factor in Agile Methodolgy
+
+
+==================
+Agile Terminogoly
+==================
+Product Owner : Responsible to deliver project to client (deliery head)
+Scrum Master : Responsibe to manage Agile Team work (Daily Tracking)
+Tech Lead : Seniour Resource in Team For Technical help
+Team Members :  Developers + Testers + DB Team + Ops Team
+
+Scrum Meeting : Daily status call ( scrum / status / standup ) - 30 mins
+Backlog Grooming Meeting : Meeting To identify pending works in the project
+Backlog Stories : Pending Stories we have created in JIRA
+Story : A task
+
+Story Points : Represents duration to complete a story
+				3 points  - 1 day
+				5 Points  - 2 days
+				8 Points  - 3 days
+
+Sprint Planning Meeting: To identify priority stories to complete
+Sprint : Set of stories planned to complete in given duration (2 weeks)
+RetroSpective meeting : Review meeting
+
+						1) What went well
+						2) What went wrong
+						3) Improvements
+						4) Lessons Learnt
+						5) Ideaz Board
+
+-----------------Status Sending in Email Format --------------------
+
+To : scrummaster-mail-id
+cc : sbiproject@tcs.com
+
+Subject : Standup Call Status - Ashok
+
+Hi Steve,
+Today i can't join our standup call due to doctor appointment.
+Please find my status below
+yesterday : FP-1 completed, status changed to DONE.
+today : I have started working on FP-2, targeted for Tomorrow EOD.
+I don't have any issues.
+
+Thanks,
+Ashok.
+
+------------- Email Request For DevOps team  --------------------------
+
+To : sbidevops@tcs.com
+cc: sbiproject@tcs.com
+
+Subject : New Git Repo creation Request | FP-1
+
+Hi,
+Please create new git repo for our admIN API development
+Repo Name : admin_API_REPO
+@Manager - Please approve.
+
+Thanks,
+Ashok.
+
+----------------------------------------------------------------------------
+
+To : devops@oracle.com
+cc: flipkartproject@orcle.com
+
+Subject : Jenkins Pipeline Creation Request | FP-2
+
+Body:
+
+Hi DevOps Team,
+Please create Jenkins Pipeline for Admin API deployment in below Environments.
+
+1) DEV
+2) QA
+3) UAT
+
+GIT Repo : <url>
+@Manager : Please approve
+
+Thanks,
+Ashok.
+
+-------------------------------------------------------------------------
+
+
+
+
+
+
+	

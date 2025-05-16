@@ -1,0 +1,173 @@
+chmod 400 "myapp.pem"
+
+
+
+
+
+Note: 
+1. Linux commands are case sensitivity.
+2. Using public IP Linux multiple users can connect to linux machine as it is multi user based OS.
+3. The default user name os ec2-user
+4. For default user ec2-user there is no password thats why we are connecting this using pem file.
+5. In realtime all the admin related tasks is done by devops team calles as linux administrators.
+6. When we will delete a user then the user only will be deleted but not the directory.
+7. rm *.txt it means it can delete all the txt files.
+8. mobaxterm is both GUI and CLI based.
+
+wc
+==
+[ec2-user@ip-172-31-21-29 ~]$ tac b.txt
+I am working professional.
+Hi, I am a software developer.
+this is a boy
+[ec2-user@ip-172-31-21-29 ~]$ wc b.txt
+ 3 14 72 b.txt         // Here 3 defines no of lines, 14 defines no of words & 72 defines no of characters.
+ 
+clear
+=====
+It is used to clear the terminal/console
+
+FAQ. If cat is used to read the data from a file then why we go for head/tail commands ?
+Ans. cat provides all the data where as head/tail provides some particular lines of data.
+
+sudo 
+====
+Note-1
+------
+[Jilu@ip-172-31-21-29 ec2-user]$ cd ~
+[Jilu@ip-172-31-21-29 ~]$ sudo usermod -l Jilucse Jilu
+
+We trust you have received the usual lecture from the local System
+Administrator. It usually boils down to these three things:
+
+    #1) Respect the privacy of others.
+    #2) Think before you type.
+    #3) With great power comes great responsibility.
+
+For security reasons, the password you type will not be visible.
+
+[sudo] password for Jilu:
+Sorry, try again.                    // Here we are unable to change the username because Jilu user does
+[sudo] password for Jilu:            // not have any user privilege to perform operations on linux.
+Jilu is not in the sudoers file.
+[Jilu@ip-172-31-21-29 ~]$ whoami
+Jilu
+[Jilu@ip-172-31-21-29 ~]$ sudo userdel Jilu
+[sudo] password for Jilu:
+Jilu is not in the sudoers file.
+
+Note-2
+------
+[Jilu@ip-172-31-21-29 ~]$  exit
+exit                             // To comeout from the user
+[ec2-user@ip-172-31-21-29 ~]$
+
+Note-3
+------
+[ec2-user@ip-172-31-21-29 ~]$ sudo visudo
+[ec2-user@ip-172-31-21-29 ~]$ su Jilu
+Password:  								// We can switch the user like this command also
+[Jilu@ip-172-31-21-29 ec2-user]$
+
+Note-4
+------
+sudo cat /etc/sudoers     // This command is used to open the configuration file which has sudo privilege.
+
+Note: .bashrc is a hidden file in lunux which is used to set the path/environment variables in linux machine.
+
+Working with user Groups
+========================
+id username    // this command means to know the particular username belongs to which groups
+
+
+File Permissions
+================
+1. File permissions contains total 9 letters.
+
+2.
+[ec2-user@ip-172-31-21-29 ~]$ ls -l
+total 4
+-rw-r--r--. 1 ec2-user ec2-user 182 May 10 08:14 b.txt               // Here - defines the text file/empty directory
+-rw-r--r--. 1 ec2-user ec2-user   0 May  9 16:55 c.txt                     
+drwxr-xr-x. 2 ec2-user ec2-user  20 May 10 03:38 devops              // Here d defines the empty directory
+
+3. (+) means adding a permission and (-) means removing a permission
+
+4. 
+ec2-user@ip-172-31-21-29 ~]$ sudo su Jilu
+[Jilu@ip-172-31-21-29 ec2-user]$ ls -l
+ls: cannot open directory '.': Permission denied
+[Jilu@ip-172-31-21-29 ec2-user]$ sudo ls -l /home/ec2-user/
+[sudo] password for Jilu: 
+total 4
+-rw-r--r--. 1 ec2-user ec2-user 182 May 10 08:14 b.txt
+-rw-r--r--. 1 ec2-user ec2-user   0 May  9 16:55 c.txt
+drwxr-xr-x. 2 ec2-user ec2-user  20 May 10 03:38 devops
+[Jilu@ip-172-31-21-29 ec2-user]$ sudo cat /home/ec2-user/b.txt
+There no of terms
+casully it happens
+I have to do it 
+I did not know
+There is  lot of things that you have to know
+same things
+somethings
+power
+love
+respect
+care
+respect
+ll
+cc34Jilu
+[Jilu@ip-172-31-21-29 ec2-user]$ sudo cat /home/ec2-user/b.txt
+There no of terms
+casully it happens
+I have to do it 
+I did not know
+There is  lot of things that you have to know
+same things
+somethings
+power
+love
+respect
+care
+respect
+ll
+cc34Jilu
+
+
+[Jilu@ip-172-31-21-29 ec2-user]$ sudo ls -l /home
+total 0
+drwx------. 2 Jilu     Jilu      83 May 11 03:17 Jilu   // Here first Jilu means owner, 2nd Jilu means group.
+drwx------. 2 bibhu1   bibhu     83 May 12 07:09 bibhu
+drwx------. 4 ec2-user ec2-user 151 May 10 08:14 ec2-user
+
+
+Networking Commands
+===================
+1.
+ping google.com (142.250.74.174) 56(84) bytes of data.
+64 bytes from arn11s12-in-f14.1e100.net (142.250.74.174): icmp_seq=1 ttl=113 time=3.84 ms
+64 bytes from arn11s12-in-f14.1e100.net (142.250.74.174): icmp_seq=2 ttl=113 time=3.87 ms
+64 bytes from arn11s12-in-f14.1e100.net (142.250.74.174): icmp_seq=3 ttl=113 time=3.88 ms
+64 bytes from arn11s12-in-f14.1e100.net (142.250.74.174): icmp_seq=4 ttl=113 time=3.87 ms
+^C
+--- google.com ping statistics ---
+16 packets transmitted, 16 received, 0% packet loss, time 15021ms         // To Stop this we need to type	 ctrl+d
+rtt min/avg/max/mdev = 3.838/3.866/3.878/0.010 ms							
+
+2. wget link // we can get the link once we will right click on the download link inside browser.
+3. sudo yum install git -y  // Here, -y means auto approved.
+   sudo yum install java    // It will download the latest version of Java.
+   sudo yum install openjdk-17 // It will download the specific i.e 17 version of java.
+
+						     
+
+
+
+
+
+
+
+
+
+

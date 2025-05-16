@@ -1,0 +1,103 @@
+1. If we are using Angular as UI then we have to use @RestController, but when we are using JSP/Thyme leaf then  
+   we can simply use @Controller.
+
+2. Incase of Spring webservices we have Controller->Service->DAO hierarchy. But Incase of Spring boot 
+   webservices we have Controller->Service->Repository.
+
+3. If we don't add the tomcat jasper dependency then our JSP page will be downloaded, So we have to add the 
+   tomcat jasper dependency.
+
+4. Inside Spring boot writing @repository annotation is optional but in case of DAO class it is mandatory.
+
+5. Total no of tables in project should be same as total no of entity/model class and total no of repositories.
+
+6. Ctrl+(double space) inside JSP file is used to automatically show all the tags.
+
+7. In Date Format "MM" means Month and "mm" means Minute.
+
+
+
+Generating Report Through PDF(Video No 20)
+==========================================
+
+* In Springboot for pdf generation the common libraries are: iText pdf, open pdf, aspose, Apache PdfBox.
+* iText is licences not open source. Ex uses: generating invoices, formatted reports etc.
+* Apache PdfBox is opensource. For simple pdfs we need to use Apache PdfBox.
+Ex:
+  ByteArrayOutputStream out = new ByteArrayOutputStream();
+  Document document = new Document();
+  PdfWriter.getInstances(document,out);
+  document.open();
+  document.add(set paragraph("Hellow World!");
+  document.close();
+return ResponseEntity.ok()
+       .header(HttpHeaders.CONTENT_DISPOSITION,"attachment; filename=report.pdf")
+       .contentType(MediaType.APPLICATION_PDF);
+       .body(out.toByteArray());
+
+     
+
+
+Generating Report Through Excel
+===============================
+
+* For Excel the mostly common library is Apache poi which is used for read/write excel file, styles cells and create charts.
+Common Approach:
+
+Build and , add rows and cells. WorkbookSheet
+
+Write to and return as a response. OutputStream	
+Ex: 
+  Workbook workbook = new XSSFWorkbook();
+  Sheet sheet = workbook.createSheet("Report");
+  
+  Row header = sheet.createRow(0);
+  header.createCell(0).setCellValue("Name");
+  header.createCell(1).setCellValue("Email");
+
+  Row data = sheet.createRow(1);
+  data.createCell(0).setCellValue("Bibhu");
+  data.createCell(1).setCellValue("bibhuduttbehera@gmail.com");
+
+  ByteArrayOutputStream out = new ByteArrayOutputStream();
+  workbook.write(out);
+  workbook.close();
+return ResponseEntity.ok()
+       .header(HttpHeaders.CONTENT_DISPOSITION,"attachment; filename=report.xlsx")
+       .contentType(MediaType.parseMediaType("application/vnd.openxmlformats-  
+                                                  officedocument.spreadsheetml.sheet")
+       .body(out.toByteArray());
+
+
+
+FAQ: For Realtime reports generation which concept is required to generate reports.
+Ans. For realtime Jasper report is good because through jasper we can generate Excel/pdf/HTML/CSV/Word 
+     reports.
+     For custom pdf generation like contracts, certificates, invoices then iText pdf is fine, it will not 
+     support for excel pdf generation.
+     For structured reports like tables, summaries, charts Jasper reports are fine. 
+     
+
+      
+
+ 
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
