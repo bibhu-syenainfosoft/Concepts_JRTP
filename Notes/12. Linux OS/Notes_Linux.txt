@@ -2,8 +2,6 @@ chmod 400 "myapp.pem"
 
 
 
-
-
 Note: 
 1. Linux commands are case sensitivity.
 2. Using public IP Linux multiple users can connect to linux machine as it is multi user based OS.
@@ -13,6 +11,13 @@ Note:
 6. When we will delete a user then the user only will be deleted but not the directory.
 7. rm *.txt it means it can delete all the txt files.
 8. mobaxterm is both GUI and CLI based.
+
+Steps for Creating EC2 instance and connecting through SSH Client
+=================================================================
+Services=>EC2=>lunch instance=>Provide name=>Amazon linux=>select instance type(t2.micro)=>Create new key-pair=>create key-pair=>lunch instance=>Select the created instace=>connect
+
+Through the SSH client(Gitbash/putty/mobaxterm) see the steps in dashboard then follow the steps to connect with EC2
+
 
 wc
 ==
