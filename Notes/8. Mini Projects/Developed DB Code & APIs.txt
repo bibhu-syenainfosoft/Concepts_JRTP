@@ -1,0 +1,52 @@
+CREATE TABLE enquiry (
+  id NUMBER PRIMARY KEY,
+  name VARCHAR2(4000),
+  course VARCHAR2(4000),
+  classmode VARCHAR2(4000),
+  phno VARCHAR2(4000) UNIQUE,
+  coursestatus VARCHAR2(4000),
+  FOREIGN KEY (course) REFERENCES courses(coursename),
+  FOREIGN KEY (classmode) REFERENCES classmode(classmode),
+  FOREIGN KEY (coursestatus) REFERENCES status(status)
+);
+
+
+select * from classmode; (Online, Offline)
+select * from enquiry;
+select * from status; (Open, Enrolled, Lost, Placed)
+select * from courses; (Java, Python, .NET, Oracle, DevOps)
+
+
+INSERT ALL
+   INTO Enquiry VALUES (1, 'Sita', 'Python','Online','9647828793','Open')
+   INTO Enquiry VALUES (2, 'Ravi', 'Java','Offline','9647820793','Enrolled')
+   INTO Enquiry VALUES (3, 'Chandan', 'Python','Online','9478274793','Lost')
+   INTO Enquiry VALUES (4, 'Ritesh', 'DevOps','Offline','9647890788','Placed')
+   INTO Enquiry VALUES (5, 'Kamal', 'Java','Online','7833782783','Open')
+   INTO Enquiry VALUES (6, 'Adams', '.NET','Offline','6755673456','Enrolled')
+   INTO Enquiry VALUES (7, 'Aquila', 'Python','Online','9967837845','Enrolled')
+   INTO Enquiry VALUES (8, 'GenAI', 'Oracle','Offline','67267009876','Open')
+   INTO Enquiry VALUES (9, 'Stuff', '.NET','Online','5783562822','Enrolled')
+   INTO Enquiry VALUES (10, 'Jennie', 'Java','Online','7377819702','Open')
+   INTO Enquiry VALUES (11, 'Ram', 'Oracle','Offline','8867635600','Enrolled')
+   INTO Enquiry VALUES (12, 'Shyam', 'Java','Online','8733278909','Placed')
+   INTO Enquiry VALUES (13, 'Ankit', 'DevOps','Online','7367920016','Enrolled')
+   INTO Enquiry VALUES (14, 'Sourav', 'DevOps','Offline','9898900776','Enrolled')
+   INTO Enquiry VALUES (15, 'Ganesh', '.NET','Offline','9156378872','Placed')
+   INTO Enquiry VALUES (16, 'Uma', '.NET','Online','8988787201','Open')
+   INTO Enquiry VALUES (17, 'Narayan', 'DevOps','Online','7277898003','Enrolled')
+   INTO Enquiry VALUES (18, 'Harish', '.NET','Offline','8988765090','Open')
+   INTO Enquiry VALUES (19, 'Siva', 'Oracle','Online','7892789067','Lost')
+   INTO Enquiry VALUES (20, 'Bibhu', 'Java','Offline','9640090788','Enrolled')
+                        
+SELECT * FROM dual;
+
+/*********************************************************************************************/
+
+http://localhost:8080/demo/GetCourseStatusList
+http://localhost:8080/demo/getClassModesList
+http://localhost:8080/demo/getCoursesList
+http://localhost:8080/demo/getEnquiriesList?name=&lowerBound=1&course=Java&upperBound=1
+http://localhost:8080/demo/getEnquiriesList?jsonObj=%7B%22name%22%3A%22Sita%22%2C%22lowerBound%22%3A1%2C%22upperBound%22%3A10%7D
+
+
